@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+
+    --softBlue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+
+    --veryDarkBlueMain: hsl(217, 54%, 11%);
+    --veryDarkBlueCard: hsl(216, 50%, 16%);
+    --veryDarkBlueLine: hsl(215, 32%, 27%);
+
+    --white: hsl(0, 0%, 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--veryDarkBlueMain);
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#card {
+    background-color: var(--veryDarkBlueCard);
+    width: 350px;
+    height: 600px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+}
+
+
+#image img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+}
+
+#image {
+    position: relative;
+    width: 100%;
+}
+
+#image:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(178, 100%, 50%, 0.5);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.eyeIcon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    transition: display 0.3s;
+}
+
+#image:hover .eyeIcon {
+    display: block;
+}
+
+.eye-icon {
+    width: 50px;
+    height: auto;
+}
+
+#content { 
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+h1 {
+    margin-top: 1.5rem;
+    color: var(--white);
+}
+
+h1:hover {
+    color: var(--cyan);
+    cursor: pointer;
+}
+
+#content > p {
+    color: var(--softBlue);
+    font-weight: 300;
+}
+
+#content #price {
+    display: flex;
+    justify-content: space-between;
+}
+
+#content #price div:first-child{
+    display: flex;
+    align-items: center;
+}
+
+#content #price div:first-child p{
+    color: var(--cyan);
+    font-weight: 700;
+    margin-left: 8px;
+}
+
+#content #price div:last-child{
+    display: flex;
+    align-items: center;
+}
+
+#content #price div:last-child p{
+    color: var(--softBlue);
+    font-weight: 300;
+    margin-left: 8px;
+}
+
+#avatar {
+    display: flex;
+    align-items: center;
+}
+
+#avatar img{
+    width: 40px;
+    height: 40px;
+    margin-right: 16px;
+    border: 1px solid #ffffff;
+    border-radius: 100%;
+}
+
+#avatar > p {
+    color: var(--softBlue);
+    font-weight: 300;
+}
+
+#avatar > p a {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 300;
+}
+
+#avatar > p a:hover {
+    color: var(--cyan);
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: var(--veryDarkBlueLine);
+}
+
+.attribution {
+    margin-top: 1rem;
+    color: var(--softBlue);
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: var(--cyan);
+}
